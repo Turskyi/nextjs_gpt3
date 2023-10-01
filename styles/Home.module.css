@@ -22,5 +22,22 @@
 }
 
 .inputForm {
-  width: 100%;
+  width: 90%;
+}
+
+.heading {
+  font-family: ‘Comic Sans MS’, Courier, monospace;
+  font-size: 4em;
+  font-weight: bold;
+  color: #7669ff;
+  text-align: center;
+  text-shadow: 2px 2px 2px #000000;
+}
+
+.subtitle {
+  font-family: ‘Courier New’, Courier, monospace;
+  font-size: 2em;
+  font-weight: normal;
+  text-align: left;
+  text-shadow: 1px 1px 2px #808080;
 }

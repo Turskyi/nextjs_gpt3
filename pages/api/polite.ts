@@ -18,7 +18,7 @@ export default async function handler(
     return res.status(400).json({ error: 'Prompt missing' });
   }
 
-  if (input.length > 100) {
+  if (input.length > 200) {
     return res.status(400).json({ error: 'Prompt too long' });
   }
 
@@ -34,6 +34,5 @@ export default async function handler(
   });
 
   const politerMessage = completion.data.choices[0].text;
-
   res.status(200).json({ politerMessage });
 }
