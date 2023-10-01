@@ -46,7 +46,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
-        <h1 className={styles.heading}>Politer Ai</h1>
+        <h1 className={styles.heading}>Politer AI</h1>
         <h2 className={styles.subtitle}>powered by GPT-3</h2>
         <br></br>
         <Form onSubmit={handleSubmit} className={styles.inputForm}>
