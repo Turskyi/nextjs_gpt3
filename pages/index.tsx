@@ -24,10 +24,13 @@ export default function Home() {
       try {
         setMessageLoadingError(false);
         setMessageLoading(true);
-
-        const response = await fetch("/api/polite?prompt=" + encodeURIComponent(prompt));
-        const body = await response.json();
-        setMessage(body.politerMessage);
+        if (prompt.length < 5) {
+          setMessage('Message too short');
+        } else {
+          const response = await fetch("/api/polite?prompt=" + encodeURIComponent(prompt));
+          const body = await response.json();
+          setMessage(body.politerMessage);
+        }
       } catch (error) {
         console.error(error);
         setMessageLoadingError(true);
@@ -65,10 +68,8 @@ export default function Home() {
           </Button>
         </Form>
         {messageLoading && <Spinner animation='border' />}
-        {messageLoadingError && 'Something went wrong. Please try again.'}
-        {message &&
-          <h5>{message}</h5>
-        }
+        {messageLoadingError && 'We apologize for the inconvenience, but the OpenAI API is not available at the moment. It looks like we have reached our limit or quota for the API. Please wait for a while or switch to a different service.'}
+        {message && <h5>{message}</h5>}
         {message.length == 0 &&
           <div className={styles.mainImageContainer}>
             <Image

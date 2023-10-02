@@ -12,15 +12,8 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+
   const input = req.query.prompt;
-
-  if (!input) {
-    return res.status(400).json({ error: 'Prompt missing' });
-  }
-
-  if (input.length > 200) {
-    return res.status(400).json({ error: 'Prompt too long' });
-  }
 
   const completion = await openai.createCompletion({
     model: "text-davinci-003",
