@@ -43,7 +43,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Politer AI: The ultimate tool to make your messages more polite and friendly</title>
+        <title>Politer AI: Make your messages nicer</title>
         <meta name="description" content="by Dmytro Turskyi" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
