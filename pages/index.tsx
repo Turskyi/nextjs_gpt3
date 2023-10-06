@@ -59,7 +59,7 @@ export default function Home() {
             <Form.Control
               name='prompt'
               placeholder='e.g. I do not have time for this nonsense. Stop bothering me.'
-              maxLength={200}
+              maxLength={300}
               as='textarea'
               rows={3}
             />
