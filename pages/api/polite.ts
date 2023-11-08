@@ -11,10 +11,13 @@ export default async function handler(
   request: NextApiRequest,
   response: NextApiResponse,
 ) {
+  const input = request.query.prompt?.toString();
 
-  const input = request.query.prompt;
-
-  if (input && input.length > 300) {
+  if (!input) {
+    return response.status(400).json({ error: "Please provide a prompt query  ಠ_ಠ" });
+  } else if (input.length < 5) {
+    return response.status(400).json({ error: "( ͡° ͜ʖ ͡°) Prompt too short" });
+  } else if (input.length > 300) {
     return response.status(400).json({ error: "Sorry, current limit is 300 characters per request. へ‿(ツ)‿ㄏ" });
   } else {
     const completion = await openai.createCompletion({
