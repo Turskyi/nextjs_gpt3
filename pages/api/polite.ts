@@ -1,4 +1,3 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { Configuration, OpenAIApi } from 'openai';
 
@@ -9,23 +8,27 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
+  request: NextApiRequest,
+  response: NextApiResponse,
 ) {
 
-  const input = req.query.prompt;
+  const input = request.query.prompt;
 
-  const completion = await openai.createCompletion({
-    model: "text-davinci-003",
-    prompt: `Transform the following message into a polite and friendly one.\n
-    Input: ${input}\n
-    Polite and friendly version:`,
-    max_tokens: 500,
-    temperature: 1,
-    presence_penalty: 0,
-    frequency_penalty: 0,
-  });
+  if (input && input.length > 300) {
+    return response.status(400).json({ error: "Sorry, current limit is 300 characters per request. へ‿(ツ)‿ㄏ" });
+  } else {
+    const completion = await openai.createCompletion({
+      model: "text-davinci-003",
+      prompt: `Transform the following message into a polite and friendly one.\n
+      Input: ${input}\n
+      Polite and friendly version:`,
+      max_tokens: 500,
+      temperature: 1,
+      presence_penalty: 0,
+      frequency_penalty: 0,
+    });
 
-  const politerMessage = completion.data.choices[0].text;
-  res.status(200).json({ politerMessage });
+    const politerMessage = completion.data.choices[0].text;
+    return response.status(200).json({ politerMessage });
+  }
 }
