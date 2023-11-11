@@ -5,6 +5,7 @@ import Head from 'next/head';
 import { Container } from 'react-bootstrap';
 import { Inter } from 'next/font/google'
 import styles from '@/styles/App.module.css';
+import NextNProgress from "nextjs-progressbar";
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -17,6 +18,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <NextNProgress />
       <Container className={styles.pageContainer}>
         <Component {...pageProps} />
       </Container>
