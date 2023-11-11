@@ -19,7 +19,7 @@ by Coding in Flow YouTube channel.
 • Git Hosting Service: [GitHub](https://github.com);
 
 • CI/CD: [Vercel](https://vercel.com/features/previews) is used to
-deliver new release to production environment after every push to **master** branch;
+deliver the new releases to the production environment after every push to the **master** branch;
 
 • Api: https://platform.openai.com/docs/api-reference;
 
@@ -40,7 +40,7 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+You can edit the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
 [API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed
 on [http://localhost:3000/api/polite](http://localhost:3000/api/polite). This endpoint can be edited
