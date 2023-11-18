@@ -4,10 +4,6 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped
 with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-It follows
-the [Build and Deploy a GPT-3 App in NextJS in 1 Hour (ChatGPT, TypeScript)](https://youtu.be/5i1Q2GSqidU?si=yJQPo4ToK31t9wEy)
-by Coding in Flow YouTube channel.
-
 ## PROJECT SPECIFICATION
 
 • Programming language: [TypeScript](https://www.typescriptlang.org);
@@ -40,11 +36,8 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can edit the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
 [API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed
-on [http://localhost:3000/api/polite](http://localhost:3000/api/polite). This endpoint can be edited
-in `pages/api/polite.ts`.
+on [http://localhost:3000/api/polite](http://localhost:3000/api/polite).
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated
 as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
