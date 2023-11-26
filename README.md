@@ -8,7 +8,7 @@ with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/
 
 • Programming language: [TypeScript](https://www.typescriptlang.org);
 
-• SDK: [Next JS](https://nextjs.org);
+• SDK: [Next.js](https://nextjs.org);
 
 • Version control system: [Git](https://git-scm.com);
 
@@ -23,7 +23,7 @@ deliver the new releases to the production environment after every push to the *
 
 • Screenshot:
 <!--suppress CheckImageSize -->
-<img src="screenshots/politerai_home.png" width="800" >
+<img src="screenshots/politerai_home.png" width="800"  alt="screenshot of the home page">
 
 ## Getting Started
 
@@ -52,7 +52,9 @@ named such that another developer reading the code can easily understand their f
 ## Credits
 
 This project is based on
-the [Build and Deploy a GPT-3 App in NextJS in 1 Hour (ChatGPT, TypeScript)](https://youtu.be/5i1Q2GSqidU?si=yJQPo4ToK31t9wEy)
+the [Build and Deploy a GPT-3 App in Next.js in 1 Hour (ChatGPT,
+TypeScript)](https://youtu.be/5i1Q2GSqidU?si=yJQPo4ToK31t9wEy)
 by [Coding in Flow](https://github.com/codinginflow) YouTube channel.
-All credit goes to the original author [Florian Walther](https://github.com/florianwalther-private). I only followed
+All credit goes to the original author [Florian Walther](https://github.com/florianwalther-private).
+I only followed
 along and made some minor changes.
