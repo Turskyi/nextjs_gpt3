@@ -20,11 +20,9 @@ export default async function handler(
   } else if (input.length < 5) {
     return response.status(400).json({ error: '( ͡° ͜ʖ ͡°) Prompt too short' });
   } else if (input.length > 300) {
-    return response
-      .status(400)
-      .json({
-        error: 'Sorry, current limit is 300 characters per request. へ‿(ツ)‿ㄏ',
-      });
+    return response.status(400).json({
+      error: 'Sorry, current limit is 300 characters per request. へ‿(ツ)‿ㄏ',
+    });
   } else {
     const completion = await openai.createCompletion({
       model: 'text-davinci-003',
