@@ -1,4 +1,5 @@
 [![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner-direct-single.svg)](https://stand-with-ukraine.pp.ua)
+
 # Politer Ai - Web application
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped
@@ -19,9 +20,11 @@ deliver the new releases to the production environment after every push to the *
 
 • Api: https://platform.openai.com/docs/api-reference;
 
-• Architectural pattern: [Monolith](https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/common-web-application-architectures#all-in-one-applications);
+• Architectural
+pattern: [Monolith](https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/common-web-application-architectures#all-in-one-applications);
 
 • Screenshot:
+
 <!--suppress CheckImageSize -->
 <img src="screenshots/politerai_home.png" width="800"  alt="screenshot of the home page">
 
