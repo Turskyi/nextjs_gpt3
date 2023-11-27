@@ -1,12 +1,14 @@
 {
-    "spellright.language": [
-        "en"
-    ],
-    "spellright.documentTypes": [
-        "markdown",
-        "latex",
-        "plaintext",
-        "typescript",
-        "jsonc"
-    ]
+  "prettier.singleQuote": true,
+  "spellright.language": [
+    "en"
+  ],
+  "spellright.documentTypes": [
+    "markdown",
+    "latex",
+    "plaintext",
+    "typescript",
+    "jsonc",
+    "typescriptreact"
+  ]
 }
