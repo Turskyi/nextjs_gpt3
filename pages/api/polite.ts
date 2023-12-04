@@ -46,6 +46,6 @@ export default async function handler(
     });
 
     const politerMessage = completion.data.choices[0].text;
-    return response.status(200).json({ politerMessage });
+    return response.setHeader("Content-Type", "application/json").status(200).json({ politerMessage });
   }
 }
