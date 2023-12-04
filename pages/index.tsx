@@ -81,7 +81,7 @@ export default function Home() {
             <Image
               src={mainImage}
               fill
-              alt="A picture of a text transform your message and the image of two people talking to each other"
+              alt="A picture of somebody holding the image of smile"
               priority
               className={styles.mainImage}
             />
