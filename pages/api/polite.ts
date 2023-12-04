@@ -25,7 +25,7 @@ export default async function handler(
     });
   } else {
     const completion = await openai.createCompletion({
-      model: 'text-davinci-003',
+      model: 'gpt-3.5-turbo-instruct',
       prompt: `Transform the following message into a polite and friendly one.\n
       Examples:\n
       Input: I don't have time for this nonsense.\n
