@@ -45,14 +45,14 @@ export default function Home() {
         <title>Politer AI: Make your messages nicer</title>
         <meta
           name="description"
-          content="Politer AI is a GPT-3 powered tool created by Software Engineer Dmytro Turskyi, that helps you write more polite and friendly messages. Just type your message and click the button to see the magic."
+          content="Politer AI is a GPT-3.5 powered tool created by Software Engineer Dmytro Turskyi, that helps you write more polite and friendly messages. Just type your message and click the button to see the magic."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main}`}>
         <h1 className={styles.heading}>Politer AI</h1>
-        <h2 className={styles.subtitle}>powered by GPT-3</h2>
+        <h2 className={styles.subtitle}>powered by GPT-3.5</h2>
         <br></br>
         <Form onSubmit={handleSubmit} className={styles.inputForm}>
           <Form.Group className="mb-3" controlId="prompt-input">
