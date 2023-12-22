@@ -4,7 +4,7 @@ import styles from '@/styles/Home.module.css';
 import mainImage from '@/assets/images/main_horizontal_image.png';
 import { Button, Form, Spinner } from 'react-bootstrap';
 import { FormEvent, useState } from 'react';
-import { INPUT_MAX_LENGTH } from './constants';
+import { INPUT_MAX_LENGTH } from '../constants';
 
 export default function Home() {
   const [message, setMessage] = useState('');

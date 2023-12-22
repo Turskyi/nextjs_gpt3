@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { Configuration, OpenAIApi } from 'openai';
-import { INPUT_MAX_LENGTH } from '../constants';
+import { INPUT_MAX_LENGTH } from '../../constants';
 
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
