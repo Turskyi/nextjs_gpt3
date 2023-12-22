@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { Configuration, OpenAIApi } from 'openai';
+import { INPUT_MAX_LENGTH } from '../../constants';
 
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
@@ -19,9 +20,9 @@ export default async function handler(
       .json({ error: 'Please provide a prompt query  ಠ_ಠ' });
   } else if (input.length < 5) {
     return response.status(400).json({ error: '( ͡° ͜ʖ ͡°) Prompt too short' });
-  } else if (input.length > 300) {
+  } else if (input.length > INPUT_MAX_LENGTH) {
     return response.status(400).json({
-      error: 'Sorry, current limit is 300 characters per request. へ‿(ツ)‿ㄏ',
+      error: `Sorry, current limit is ${INPUT_MAX_LENGTH} characters per request. へ‿(ツ)‿ㄏ`,
     });
   } else {
     const completion = await openai.createCompletion({
@@ -46,6 +47,9 @@ export default async function handler(
     });
 
     const politerMessage = completion.data.choices[0].text;
-    return response.setHeader("Content-Type", "application/json").status(200).json({ politerMessage });
+    return response
+      .setHeader('Content-Type', 'application/json')
+      .status(200)
+      .json({ politerMessage });
   }
 }

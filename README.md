@@ -25,8 +25,8 @@ deliver the new releases to the production environment after every push to the *
 
 • Api: https://platform.openai.com/docs/api-reference;
 
-• Architectural
-pattern: [Monolith](https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/common-web-application-architectures#all-in-one-applications);
+• Architectural pattern:
+[Monolith](https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/common-web-application-architectures#all-in-one-applications);
 
 • Screenshot:
 

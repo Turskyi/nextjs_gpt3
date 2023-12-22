@@ -14,14 +14,14 @@ const PrivacyPolicyAndroid = () => {
       </Head>
       <main className={styles.main}>
         <h1 className={styles.heading}>
-          Privacy Policy for Android Mobile Application "Politer AI"
+          Privacy Policy for Android Mobile Application &quot;Politer AI&quot;
         </h1>
         <p className={styles.intro}>
           We care about your privacy and we respect your data. This Privacy The
           policy explains how we collect, use, and share your personal
-          information when you use our Android mobile application (the "App").
-          Please read this Privacy Policy carefully and contact us if you have
-          any questions.
+          information when you use our Android mobile application (the
+          &quot;App&quot;). Please read this Privacy Policy carefully and
+          contact us if you have any questions.
         </p>
         <h2 className={styles.subheading}>What information do we collect?</h2>
         <p className={styles.paragraph}>
