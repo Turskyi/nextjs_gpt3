@@ -5,7 +5,7 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped
 with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-**Politer AI** is a web app that uses GPT-3, a powerful AI model, to make messages more polite and friendly.
+**Politer AI** is a web app that uses GPT-3.5, a powerful AI model, to make messages more polite and friendly.
 Type your message and click the button to see the result.
 You can use it for any communication that needs politeness and friendliness.
 No registration or personal data needed, and it’s free.
