@@ -89,6 +89,28 @@ export default function Home() {
           </div>
         )}
       </main>
+      <div
+        style={{
+          position: 'fixed',
+          bottom: 0,
+          left: '50%',
+          transform: 'translateX(-50%)',
+          paddingBottom: '90px',
+        }}
+      >
+        <a
+          href="https://play.google.com/store/apps/details?id=com.turskyi.politerai&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
+          target="_blank"
+          style={{ alignSelf: 'center' }}
+        >
+          <Image
+            src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+            alt="Get it on Google Play"
+            width={150}
+            height={58}
+          />
+        </a>
+      </div>
     </>
   );
 }
