@@ -1,4 +1,5 @@
 [![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner-direct-single.svg)](https://stand-with-ukraine.pp.ua)
+![Vercel Deploy](https://therealsujitk-vercel-badge.vercel.app/?app=nextjs-gpt3-beta&style=plastic)
 
 # Politer AI – web app
 
