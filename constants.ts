@@ -1,1 +1,1 @@
-export const INPUT_MAX_LENGTH = 500;
+export const INPUT_MAX_LENGTH = 600;
