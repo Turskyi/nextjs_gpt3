@@ -24,7 +24,7 @@ No registration or personal data needed, and it is free.
 • CI/CD: [Vercel](https://vercel.com/features/previews) is used to
 deliver the new releases to the production environment after every push to the **master** branch;
 
-• Api: https://platform.openai.com/docs/api-reference;
+• RESTful API: https://platform.openai.com/docs/api-reference;
 
 • Architectural pattern:
 [Monolith](https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/common-web-application-architectures#all-in-one-applications);
