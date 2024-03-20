@@ -7,10 +7,14 @@ import { FormEvent, useState } from 'react';
 import { INPUT_MAX_LENGTH } from '../constants';
 
 export default function Home() {
+  // State to track the message input.
   const [message, setMessage] = useState('');
   const [messageLoading, setMessageLoading] = useState(false);
   const [messageLoadingError, setMessageLoadingError] = useState(false);
+  // State to track character count.
+  const [charCount, setCharCount] = useState(0);
 
+  // Function to handle form submission.
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     setMessage('');
     event.preventDefault();
@@ -37,6 +41,12 @@ export default function Home() {
         setMessageLoading(false);
       }
     }
+  }
+
+  // Function to handle input change and update character count
+  function handleInputChange(event: React.ChangeEvent<HTMLTextAreaElement>) {
+    const value = event.target.value;
+    setCharCount(value.length);
   }
 
   return (
@@ -67,7 +77,12 @@ export default function Home() {
               maxLength={INPUT_MAX_LENGTH}
               as="textarea"
               rows={3}
+              // Call handleInputChange on input change.
+              onChange={handleInputChange}
             />
+            <p>
+              {charCount}/{INPUT_MAX_LENGTH} characters
+            </p>
           </Form.Group>
           <Button type="submit" className="mb-3" disabled={messageLoading}>
             Polite it up 😊
