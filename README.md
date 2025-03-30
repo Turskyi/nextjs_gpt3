@@ -1,15 +1,17 @@
 [![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner-direct-single.svg)](https://stand-with-ukraine.pp.ua)
 ![Vercel Deploy](https://therealsujitk-vercel-badge.vercel.app/?app=nextjs-gpt3-beta&style=plastic)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/Turskyi/nextjs_gpt3)
+<img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/Turskyi/nextjs_gpt3">
 
 # Politer AI – web app
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped
 with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-**Politer AI** is a web app that uses GPT-3.5, a powerful AI model, to make messages more polite and friendly.
-Type your message and click the button to see the result.
-You can use it for any communication that needs politeness and friendliness.
-No registration or personal data needed, and it is free.
+**Politer AI** is a web app that uses GPT-3.5, a powerful AI model, to make
+messages more polite and friendly. Type your message and click the button to
+see the result. You can use it for any communication that needs politeness and
+friendliness. No registration or personal data needed, and it is free.
 
 ## PROJECT SPECIFICATION
 
@@ -22,7 +24,8 @@ No registration or personal data needed, and it is free.
 • Git Hosting Service: [GitHub](https://github.com);
 
 • CI/CD: [Vercel](https://vercel.com/features/previews) is used to
-deliver the new releases to the production environment after every push to the **master** branch;
+deliver the new releases to the production environment after every push to the
+**master** branch;
 
 • RESTful API: https://platform.openai.com/docs/api-reference;
 
@@ -43,20 +46,24 @@ First, run the development server:
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see
+the result.
 
 [API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed
 on [http://localhost:3000/api/polite](http://localhost:3000/api/polite).
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated
-as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are
+treated as [API routes](https://nextjs.org/docs/api-routes/introduction)
+instead of React pages.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and
-load Inter, a custom Google Font.
+This project uses
+[`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to
+automatically optimize and load Inter, a custom Google Font.
 
-• **Code Readability:** code is easily readable with no unnecessary blank lines, no unused variables
-or methods, and no commented-out code, all variables, methods, and resource IDs are descriptively
-named such that another developer reading the code can easily understand their function.
+• **Code Readability:** code is easily readable with no unnecessary blank
+lines, no unused variables or methods, and no commented-out code, all
+variables, methods, and resource IDs are descriptively named such that another
+developer reading the code can easily understand their function.
 
 ## Credits
 
@@ -64,6 +71,6 @@ This project is based on
 the [Build and Deploy a GPT-3 App in Next.js in 1 Hour (ChatGPT,
 TypeScript)](https://youtu.be/5i1Q2GSqidU?si=yJQPo4ToK31t9wEy)
 by [Coding in Flow](https://github.com/codinginflow) YouTube channel.
-All credit goes to the original author [Florian Walther](https://github.com/florianwalther-private).
-I only followed
+All credit goes to the original author
+[Florian Walther](https://github.com/florianwalther-private). I only followed
 along and made some minor changes.

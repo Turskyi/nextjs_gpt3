@@ -1,6 +1,6 @@
 {
   "name": "nextjs_gpt3",
-  "version": "0.1.0",
+  "version": "1.0.3",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -36,5 +36,8 @@
     "postcss": "^8.4.31",
     "tailwindcss": "^3.3.5",
     "typescript": "latest"
+  },
+  "prettier": {
+    "singleQuote": true
   }
 }
