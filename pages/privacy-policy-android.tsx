@@ -8,7 +8,9 @@ const PrivacyPolicyAndroid = () => {
         <title>Politer AI - Privacy Policy</title>
         <meta
           name="description"
-          content="Privacy Policy for Politer AI, an Android mobile application that helps you write more polite and friendly messages using GPT-3.5."
+          content={`Privacy Policy for Politer AI, an Android mobile 
+            application that helps you write more polite and friendly messages 
+            using GPT-3.5.`}
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
