@@ -95,3 +95,52 @@
   /* Ensures the container takes the full width */
   width: 100%;
 }
+
+.screenshotSection {
+  margin: 2rem 0;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.downloadSection {
+  /* Adds spacing around the section */
+  margin: 2rem 0;
+  text-align: center; /* Centers the content */
+  margin-bottom: 0.5rem;
+}
+
+.downloadSection h3 {
+  font-size: 1.5rem; /* Adjusts the heading size */
+  margin-bottom: 1rem; /* Adds spacing below the heading */
+}
+
+.downloadBadges {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Space between the badges */
+  margin-bottom: 10px; /* Adds spacing below the badges */
+}
+
+.screenshots {
+  display: flex;
+  justify-content: flex-start; /* Align items to the left */
+  align-items: center;
+  margin-top: 1rem;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  scroll-snap-type: x mandatory; /* Smooth snapping for scrolling */
+  padding-bottom: 10px; /* Add padding to avoid scrollbar overlap */
+}
+
+.screenshots::-webkit-scrollbar {
+  height: 8px; /* Customize scrollbar height */
+}
+
+.screenshots::-webkit-scrollbar-thumb {
+  background: #ccc; /* Customize scrollbar color */
+  border-radius: 4px;
+}
+
+.screenshots img {
+  scroll-snap-align: start; /* Ensure each image snaps into view */
+}
