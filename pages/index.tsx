@@ -11,6 +11,13 @@ import { INPUT_MAX_LENGTH } from '../constants';
 import Link from 'next/link';
 
 export default function Home() {
+  const placeholderExamples = [
+    'This makes no sense at all.',
+    'What are you even talking about?',
+    'That’s a terrible idea.',
+    'You’re wrong. Do some research.',
+  ];
+
   const [message, setMessage] = useState('');
   const [messageLoading, setMessageLoading] = useState(false);
   const [messageLoadingError, setMessageLoadingError] = useState(false);
@@ -80,7 +87,11 @@ export default function Home() {
             </Form.Label>
             <Form.Control
               name="prompt"
-              placeholder="e.g. This makes no sense at all."
+              placeholder={`e.g. ${
+                placeholderExamples[
+                  Math.floor(Math.random() * placeholderExamples.length)
+                ]
+              }`}
               maxLength={INPUT_MAX_LENGTH}
               as="textarea"
               rows={3}
