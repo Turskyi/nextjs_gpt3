@@ -14,3 +14,5 @@ esbenp.prettier-vscode
 prisma
 noreferrer
 spellright
+svgr
+webpack

@@ -6,6 +6,7 @@ import { Button, Form, Spinner } from 'react-bootstrap';
 import { FormEvent, useState } from 'react';
 import { INPUT_MAX_LENGTH } from '../constants';
 import Link from 'next/link';
+import appStoreBadgePath from '@/assets/images/Download_on_the_App_Store_Badge.png';
 
 export default function Home() {
   // State to track the message input.
@@ -100,7 +101,16 @@ export default function Home() {
           OpenAI API is not available at the moment. It looks like we have 
           reached our limit or quota for the API. Please wait for a while or 
           switch to a different service.`}
-        {message && <h5>{message}</h5>}
+
+        {message && (
+          <div className={styles.politeContainer}>
+            <h5 className={styles.politeTitle}>Polite version:</h5>
+            <div className={styles.politeMessage}>
+              <h5>{message}</h5>
+            </div>
+          </div>
+        )}
+
         {message.length == 0 && (
           <div className={styles.mainImageContainer}>
             <Image
@@ -112,38 +122,72 @@ export default function Home() {
             />
           </div>
         )}
+        <section className={styles.featuresSection}>
+          <h2>Why Use Politer AI?</h2>
+          <ul className={styles.featuresList}>
+            <li>Instantly make your messages more polite and professional</li>
+            <li>Easy-to-use interface</li>
+            <li>Powered by AI to enhance your communication</li>
+            <li>Available for free on Android</li>
+          </ul>
+        </section>
         <div
           style={{
             display: 'flex',
-            flexDirection: 'column',
+            justifyContent: 'center',
             alignItems: 'center',
+            flexDirection: 'column',
             paddingBottom: '20px',
+            width: '100%',
           }}
         >
-          <a
-            href={`https://play.google.com/store/apps/details?id=com.turskyi.politerai&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1`}
-            target="_blank"
-            style={{ display: 'block', marginBottom: '10px' }}
-          >
-            <Image
-              src={`https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png`}
-              alt="Get it on Google Play"
-              width={150}
-              height={58}
-            />
-          </a>
-          <Link
-            href="/support"
+          <h3>Download Politer AI</h3>
+          <div
             style={{
-              display: 'block',
-              fontSize: '14px',
-              color: '#007bff',
-              textDecoration: 'none',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              gap: '10px', // Add spacing between the badges
+              marginBottom: '10px',
             }}
           >
-            Support
-          </Link>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.turskyi.politerai"
+              target="_blank"
+              style={{ display: 'inline-block' }}
+            >
+              <Image
+                src={`https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png`}
+                alt="Get it on Google Play"
+                width={150}
+                height={58}
+              />
+            </a>
+            <a
+              href="https://apps.apple.com/app/id6743640556"
+              target="_blank"
+              style={{ display: 'inline-block' }}
+            >
+              <Image
+                src={appStoreBadgePath}
+                alt="Download on the App Store"
+                width={136}
+                height={42}
+              />
+            </a>
+          </div>
         </div>
+        <Link
+          href="/support"
+          style={{
+            display: 'block',
+            fontSize: '14px',
+            color: '#007bff',
+            textDecoration: 'none',
+          }}
+        >
+          Support
+        </Link>
       </main>
     </>
   );

@@ -47,3 +47,51 @@
   text-align: left;
   text-shadow: 1px 1px 2px #808080;
 }
+
+.featuresList {
+  text-align: left;
+  /* Remove default bullets */
+  list-style-type: none;
+  /* Remove left padding */
+  padding-left: 0;
+}
+
+.featuresList li::before {
+  /* Add check mark before each item */
+  content: '✔';
+  /* Add some space between the check mark and text */
+  padding-right: 8px;
+}
+
+.politeTitle {
+  /* Aligns the title to the left */
+  text-align: left;
+  /* Adds some spacing between the title and the message */
+  padding-left: 12px;
+}
+
+.featuresSection {
+  /* Adds spacing before the section */
+  margin-top: 40px;
+}
+
+.politeMessage {
+  /* Softer background color */
+  background-color: #e3f2fd;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.politeMessage h5 {
+  /* Darker, more readable green */
+  color: #388e3c;
+  font-style: italic;
+}
+
+.politeContainer {
+  /* Ensures title and message are aligned to the left */
+  text-align: left;
+  /* Ensures the container takes the full width */
+  width: 100%;
+}
