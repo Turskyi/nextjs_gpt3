@@ -109,13 +109,16 @@ element horizontally within its container. */
 .downloadSection {
   /* Adds spacing around the section */
   margin: 2rem 0;
-  text-align: center; /* Centers the content */
+   /* Centers the content */
+  text-align: center;
   margin-bottom: 0.5rem;
 }
 
 .downloadSection h3 {
-  font-size: 1.5rem; /* Adjusts the heading size */
-  margin-bottom: 1rem; /* Adds spacing below the heading */
+  /* Adjusts the heading size */
+  font-size: 1.5rem;
+  /* Adds spacing below the heading */
+  margin-bottom: 1rem;
 }
 
 .downloadBadges {
