@@ -3,7 +3,11 @@
   flex-direction: column;
   align-items: center;
   max-width: 640px;
-  margin: auto;
+  /* 0: This sets the top and bottom margins to 0, meaning there is no 
+  vertical space above or below the element.
+auto: This automatically calculates the left and right margins to center the 
+element horizontally within its container. */
+  margin: 0 auto;
   padding: 2rem 1rem;
   text-align: center;
 }
@@ -118,29 +122,57 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px; /* Space between the badges */
-  margin-bottom: 10px; /* Adds spacing below the badges */
+  /* Adds spacing between badges */
+  gap: 10px;
+  /* Adds spacing below the badges */
+  margin-bottom: 10px;
 }
 
 .screenshots {
   display: flex;
-  justify-content: flex-start; /* Align items to the left */
-  align-items: center;
-  margin-top: 1rem;
-  overflow-x: auto; /* Enable horizontal scrolling */
-  scroll-snap-type: x mandatory; /* Smooth snapping for scrolling */
-  padding-bottom: 10px; /* Add padding to avoid scrollbar overlap */
+  justify-content: center;
+  /* Enables horizontal scrolling */
+  overflow-x: auto;
+  /* Full viewport width */
+  width: 100vw;
+  margin: 0 16px;
+  scroll-snap-type: x mandatory;
 }
 
 .screenshots::-webkit-scrollbar {
-  height: 8px; /* Customize scrollbar height */
-}
-
-.screenshots::-webkit-scrollbar-thumb {
-  background: #ccc; /* Customize scrollbar color */
-  border-radius: 4px;
+  /* Customize scrollbar height */
+  height: 8px;
 }
 
 .screenshots img {
-  scroll-snap-align: start; /* Ensure each image snaps into view */
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  /* Ensures images shrink if necessary */
+  max-width: 90%;
+  /* Maintains aspect ratio */
+  height: auto;
+}
+
+.screenshots img:first-child {
+  /* Top-left corner rounded */
+  border-top-left-radius: 20px;
+  /* Bottom-left corner rounded */
+  border-bottom-left-radius: 20px;
+}
+
+.screenshots img:last-child {
+  /* Top-right corner rounded */
+  border-top-right-radius: 20px;
+  /* Bottom-right corner rounded */
+  border-bottom-right-radius: 20px;
+}
+
+/* Apply flex-start on narrow screens */
+@media (max-width: 768px) {
+  .screenshots {
+    /* Add padding on the left and right */
+    padding: 0 16px;
+    /* Align to the left for narrow screens */
+    justify-content: flex-start;
+  }
 }

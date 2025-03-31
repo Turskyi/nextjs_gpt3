@@ -180,7 +180,7 @@ export default function Home() {
 
         {/* Screenshots Section */}
         <section className={styles.screenshotSection}>
-          <h2>App Screenshots</h2>
+          <h2>Take a Look at Politer AI in Action</h2>
           <div className={styles.screenshots}>
             <Image
               src={screenshotTablet1Path}
@@ -191,18 +191,15 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Support Link */}
-        <Link
-          href="/support"
-          style={{
-            display: 'block',
-            fontSize: '14px',
-            color: '#007bff',
-            textDecoration: 'none',
-          }}
-        >
-          Support
-        </Link>
+        {/* Footer */}
+        <footer className={styles.footer}>
+          <p>
+            <Link href="/privacy-policy">Privacy Policy</Link> |{' '}
+            <Link href="/terms-of-service">Terms of Service</Link> |{' '}
+            <Link href="/support">Support</Link>
+          </p>
+          <p>© {new Date().getFullYear()} Politer AI. All rights reserved.</p>
+        </footer>
       </main>
     </>
   );
