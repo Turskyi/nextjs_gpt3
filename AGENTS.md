@@ -19,15 +19,18 @@ project root.
 
 ## Environment Variables
 
-`OPENAI_API_KEY` must be set locally (e.g. in `.env.local`). Without it the API
-route returns a 401/500 at runtime.
+`OPENAI_API_KEY`, `GEMINI_API_KEY`, and `GROQ_API_KEY` must be set locally (e.g. in `.env.local`).
+The application uses Groq as the primary provider and falls back to OpenAI if
+Groq fails. Gemini is also integrated but currently disabled due to quota limits.
 
 ## Architecture & Data Flow
 
 ```
 Browser (pages/index.tsx)
   → GET /api/polite?prompt=<text>   (pages/api/polite.ts)
-    → OpenAI createCompletion (gpt-3.5-turbo-instruct)
+    → Primary: Groq (llama-3.3-70b-versatile)
+    → Fallback: OpenAI createCompletion (gpt-3.5-turbo-instruct)
+    → (Inactive): Google Generative AI (gemini-2.0-flash-lite)
     ← { politerMessage: string }
   ← renders polite message in UI
 ```
@@ -39,9 +42,10 @@ Browser (pages/index.tsx)
 ## Key Files
 
 | File                  | Purpose                                                                     |
-| --------------------- | --------------------------------------------------------------------------- |
+|-----------------------|-----------------------------------------------------------------------------|
 | `constants.ts`        | Shared constants (`INPUT_MAX_LENGTH=700`, `DATE_UPDATED`, `TELEGRAM_LINK`)  |
-| `pages/api/polite.ts` | OpenAI API call; validates prompt length, returns `{ politerMessage }`      |
+| `pages/api/polite.ts` | Orchestrates AI calls; handles input validation and provider fallback       |
+| `services/`           | AI provider implementations (Groq, OpenAI, Gemini)                          |
 | `pages/index.tsx`     | Main UI; form, loading state, result display                                |
 | `pages/_app.tsx`      | Global layout: Bootstrap CSS import, Inter font, `NextNProgress` bar        |
 | `next.config.js`      | `remotePatterns` allows `play.google.com` images                            |

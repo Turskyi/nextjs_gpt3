@@ -1,12 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { Configuration, OpenAIApi } from 'openai';
 import { INPUT_MAX_LENGTH } from '../../constants';
-
-const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-
-const openai = new OpenAIApi(configuration);
+import { generateWithGroq } from '../../services/groq';
+import { generateWithOpenAI } from '../../services/openai';
+// import { generateWithGemini } from '../../services/gemini';
 
 export default async function handler(
   request: NextApiRequest,
@@ -24,32 +20,42 @@ export default async function handler(
     return response.status(400).json({
       error: `Sorry, current limit is ${INPUT_MAX_LENGTH} characters per request. へ‿(ツ)‿ㄏ`,
     });
-  } else {
-    const completion = await openai.createCompletion({
-      model: 'gpt-3.5-turbo-instruct',
-      prompt: `Transform the following message into a polite and friendly one.\n
-      Examples:\n
-      Input: I don't have time for this nonsense.\n
-      Polite and friendly version: I'm sorry, but I have a lot of things to do right now.\n
-      \n
-      Input: Why don't you do it yourself?\n
-      Polite and friendly version: There are quite a few steps that I would have to take to do it, but I am afraid I do not have the capacity at this time. Would you mind doing it yourself, please? I appreciate your cooperation. You are doing a great job and I am sure you can handle it.\n
-      \n
-      Input: This is the worst idea ever.\n
-      Polite and friendly version: I appreciate your creativity, but I don't think this is feasible.\n
-      \n
-      Input: ${input}\n
-      Polite and friendly version:`,
-      max_tokens: 500,
-      temperature: 1,
-      presence_penalty: 0,
-      frequency_penalty: 0,
-    });
-
-    const politerMessage = completion.data.choices[0].text;
-    return response
-      .setHeader('Content-Type', 'application/json')
-      .status(200)
-      .json({ politerMessage });
   }
+
+  let politerMessage: string | undefined;
+
+  /**
+   * AI PROVIDER SELECTION
+   *
+   * Current Primary: Groq (Llama 3.3 70B)
+   * Fallback: OpenAI (GPT-3.5)
+   *
+   * To switch to Gemini as primary:
+   * 1. Import generateWithGemini from '../../services/gemini'
+   * 2. Replace generateWithGroq(input) with generateWithGemini(input)
+   */
+
+  // 1. Try Groq (Primary - Most reliable free tier)
+  try {
+    politerMessage = await generateWithGroq(input);
+  } catch (error) {
+    console.error('Groq API error:', error);
+  }
+
+  // 2. Fallback to OpenAI
+  if (!politerMessage) {
+    try {
+      politerMessage = await generateWithOpenAI(input);
+    } catch (error) {
+      console.error('OpenAI API error:', error);
+      return response
+        .status(500)
+        .json({ error: 'Both AI providers failed. Please try again later.' });
+    }
+  }
+
+  return response
+    .setHeader('Content-Type', 'application/json')
+    .status(200)
+    .json({ politerMessage: politerMessage?.trim() || '' });
 }

@@ -39,8 +39,11 @@ export default function Home() {
           const response = await fetch(
             '/api/polite?prompt=' + encodeURIComponent(prompt),
           );
+          if (!response.ok) {
+            throw new Error('API error');
+          }
           const body = await response.json();
-          setMessage(body.politerMessage);
+          setMessage(body.politerMessage || '');
         }
       } catch (error) {
         console.error(error);
@@ -124,7 +127,7 @@ export default function Home() {
         )}
 
         {/* Main Image Section */}
-        {message.length === 0 && (
+        {(!message || message.length === 0) && (
           <div className={styles.mainImageContainer}>
             <Image
               src={mainImage}

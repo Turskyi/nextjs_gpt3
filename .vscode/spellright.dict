@@ -18,3 +18,7 @@ svgr
 webpack
 scss
 md
+esnext
+jsx
+tsx
+ts
