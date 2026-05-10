@@ -3,7 +3,7 @@
 ## Project Overview
 
 **Politer AI** is a Next.js monolith (Pages Router) that rewrites rude or blunt
-messages into polite ones using OpenAI's `gpt-3.5-turbo-instruct` model. It is
+messages into polite ones using high-performance open-source models. It is
 deployed automatically to Vercel on every push to `master`.
 
 ## Developer Workflows
@@ -19,9 +19,9 @@ project root.
 
 ## Environment Variables
 
-`OPENAI_API_KEY`, `GEMINI_API_KEY`, and `GROQ_API_KEY` must be set locally (e.g. in `.env.local`).
-The application uses Groq as the primary provider and falls back to OpenAI if
-Groq fails. Gemini is also integrated but currently disabled due to quota limits.
+`GEMINI_API_KEY`, `GROQ_API_KEY`, and `MISTRAL_API_KEY` must be set locally (e.g. in `.env.local`).
+The application uses Groq as the primary provider, with Mistral and Gemini as
+fallbacks.
 
 ## Architecture & Data Flow
 
@@ -29,8 +29,8 @@ Groq fails. Gemini is also integrated but currently disabled due to quota limits
 Browser (pages/index.tsx)
   → GET /api/polite?prompt=<text>   (pages/api/polite.ts)
     → Primary: Groq (llama-3.3-70b-versatile)
-    → Fallback: OpenAI createCompletion (gpt-3.5-turbo-instruct)
-    → (Inactive): Google Generative AI (gemini-2.0-flash-lite)
+    → Fallback 1: Mistral AI (mistral-small-latest)
+    → Fallback 2: Google Generative AI (gemini-2.0-flash-lite)
     ← { politerMessage: string }
   ← renders polite message in UI
 ```
@@ -45,23 +45,11 @@ Browser (pages/index.tsx)
 |-----------------------|-----------------------------------------------------------------------------|
 | `constants.ts`        | Shared constants (`INPUT_MAX_LENGTH=700`, `DATE_UPDATED`, `TELEGRAM_LINK`)  |
 | `pages/api/polite.ts` | Orchestrates AI calls; handles input validation and provider fallback       |
-| `services/`           | AI provider implementations (Groq, OpenAI, Gemini)                          |
+| `services/`           | AI provider implementations (Groq, Mistral, Gemini)                         |
 | `pages/index.tsx`     | Main UI; form, loading state, result display                                |
 | `pages/_app.tsx`      | Global layout: Bootstrap CSS import, Inter font, `NextNProgress` bar        |
 | `next.config.js`      | `remotePatterns` allows `play.google.com` images                            |
 | `tailwind.config.ts`  | DaisyUI custom `lightTheme` palette; content paths point to `src/` (unused) |
-
-## OpenAI SDK Version
-
-Uses **openai v3** (legacy), not v4. The instantiation pattern is:
-
-```ts
-const configuration = new Configuration({ apiKey: process.env.OPENAI_API_KEY });
-const openai = new OpenAIApi(configuration);
-openai.createCompletion({ model: 'gpt-3.5-turbo-instruct', ... });
-```
-
-Do **not** use the v4 `new OpenAI()` constructor pattern.
 
 ## Styling Conventions
 

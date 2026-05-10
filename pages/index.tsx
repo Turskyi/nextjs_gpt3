@@ -65,7 +65,7 @@ export default function Home() {
         <title>Politer AI: Make your messages nicer</title>
         <meta
           name="description"
-          content="Politer AI is a GPT-3.5 powered tool created by Software 
+          content="Politer AI is a tool created by Software
           Engineer Dmytro Turskyi, that helps you write more polite and 
           friendly messages. Just type your message and click the button to 
           see the magic."
@@ -111,7 +111,7 @@ export default function Home() {
         {messageLoading && <Spinner animation="border" />}
         {messageLoadingError && (
           <p className={styles.error}>
-            We apologize for the inconvenience, but the OpenAI API is not
+            We apologize for the inconvenience, but the AI service is not
             available at the moment. It looks like we have reached our limit or
             quota for the API. Please wait for a while or switch to a different
             service.
@@ -144,7 +144,7 @@ export default function Home() {
           <h2>Why Use Politer AI?</h2>
           <ul className={styles.featuresList}>
             <li>Instantly make your messages more polite and professional</li>
-            <li>Easy-to-use interface powered by GPT-3.5</li>
+            <li>Easy-to-use interface powered by modern AI</li>
             <li>Enhance your communication with AI</li>
             <li>Available for free on Android and iOS</li>
           </ul>

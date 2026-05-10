@@ -1,8 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { INPUT_MAX_LENGTH } from '../../constants';
 import { generateWithGroq } from '../../services/groq';
-import { generateWithOpenAI } from '../../services/openai';
-// import { generateWithGemini } from '../../services/gemini';
+import { generateWithMistral } from '../../services/mistral';
+import { generateWithGemini } from '../../services/gemini';
 
 export default async function handler(
   request: NextApiRequest,
@@ -28,11 +28,8 @@ export default async function handler(
    * AI PROVIDER SELECTION
    *
    * Current Primary: Groq (Llama 3.3 70B)
-   * Fallback: OpenAI (GPT-3.5)
-   *
-   * To switch to Gemini as primary:
-   * 1. Import generateWithGemini from '../../services/gemini'
-   * 2. Replace generateWithGroq(input) with generateWithGemini(input)
+   * Primary Fallback: Mistral (Mistral Small)
+   * Secondary Fallback: Gemini (Gemini 2.0 Flash Lite)
    */
 
   // 1. Try Groq (Primary - Most reliable free tier)
@@ -42,15 +39,24 @@ export default async function handler(
     console.error('Groq API error:', error);
   }
 
-  // 2. Fallback to OpenAI
+  // 2. Fallback to Mistral
   if (!politerMessage) {
     try {
-      politerMessage = await generateWithOpenAI(input);
+      politerMessage = await generateWithMistral(input);
     } catch (error) {
-      console.error('OpenAI API error:', error);
+      console.error('Mistral API error:', error);
+    }
+  }
+
+  // 3. Last Resort: Gemini
+  if (!politerMessage) {
+    try {
+      politerMessage = await generateWithGemini(input);
+    } catch (error) {
+      console.error('Gemini API error:', error);
       return response
         .status(500)
-        .json({ error: 'Both AI providers failed. Please try again later.' });
+        .json({ error: 'All AI providers failed. Please try again later.' });
     }
   }
 

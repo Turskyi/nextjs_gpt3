@@ -1,14 +1,13 @@
 [![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner-direct-single.svg)](https://stand-with-ukraine.pp.ua)
-![Vercel Deploy](https://therealsujitk-vercel-badge.vercel.app/?app=nextjs-gpt3-beta&style=plastic)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/Turskyi/nextjs_gpt3)
-<img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/Turskyi/nextjs_gpt3">
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/Turskyi/politer-ai)](https://github.com/Turskyi/politer-ai/releases)
+<img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/Turskyi/politer-ai">
 
 # Politer AI – web app
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped
 with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-**Politer AI** is a web app that uses GPT-3.5, a powerful AI model, to make
+**Politer AI** is a web app that uses advanced AI models to make
 messages more polite and friendly. Type your message and click the button to
 see the result. You can use it for any communication that needs politeness and
 friendliness. No registration or personal data needed, and it is free.
@@ -27,7 +26,7 @@ friendliness. No registration or personal data needed, and it is free.
 deliver the new releases to the production environment after every push to the
 **master** branch;
 
-• RESTful API: https://platform.openai.com/docs/api-reference;
+• AI Providers: Groq, Mistral AI, Google Gemini;
 
 • Architectural pattern:
 [Monolith](https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/common-web-application-architectures#all-in-one-applications);
@@ -68,8 +67,7 @@ developer reading the code can easily understand their function.
 ## Credits
 
 This project is based on
-the [Build and Deploy a GPT-3 App in Next.js in 1 Hour (ChatGPT,
-TypeScript)](https://youtu.be/5i1Q2GSqidU?si=yJQPo4ToK31t9wEy)
+the [Build and Deploy an AI App in Next.js in 1 Hour (TypeScript)](https://youtu.be/5i1Q2GSqidU?si=yJQPo4ToK31t9wEy)
 by [Coding in Flow](https://github.com/codinginflow) YouTube channel.
 All credit goes to the original author
 [Florian Walther](https://github.com/florianwalther-private). I only followed

@@ -10,7 +10,7 @@ const PrivacyPolicyAndroid = () => {
           name="description"
           content={`Privacy Policy for Politer AI, an Android mobile 
             application that helps you write more polite and friendly messages 
-            using GPT-3.5.`}
+            using advanced AI.`}
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -33,8 +33,8 @@ const PrivacyPolicyAndroid = () => {
           <li className={styles.item}>
             The messages that you type or paste into the App. We use this
             information to provide you with the service of transforming your
-            message into a more polite and friendly version using GPT-3, an
-            artificial intelligence model that can generate natural language. We
+            message into a more polite and friendly version using artificial
+            intelligence models that can generate natural language. We
             do not store or share your messages with anyone, and we delete them
             as soon as we process them.
           </li>
@@ -61,7 +61,7 @@ const PrivacyPolicyAndroid = () => {
         <ul className={styles.list}>
           <li className={styles.item}>
             To provide you with the service of transforming your message into a
-            more polite and friendly version using GPT-3.
+            more polite and friendly version using artificial intelligence.
           </li>
           <li className={styles.item}>
             To improve our App performance, functionality, and security.
@@ -82,20 +82,30 @@ const PrivacyPolicyAndroid = () => {
         </p>
         <ul className={styles.list}>
           <li className={styles.item}>
-            We share your messages with OpenAI, the provider of the GPT-3.5
-            artificial intelligence model that we use to transform your
-            messages. OpenAI is a research organization that aims to ensure that
-            artificial intelligence is aligned with human values and can be used
-            for good. OpenAI has its privacy policy that you can read
-            here:&#160;
+            We share your messages with our AI model providers (such as Groq,
+            Mistral AI, and Google) whose artificial intelligence models we use
+            to transform your messages. These providers have their own privacy
+            policies that you can read here:&#160;
             <a
-              href="https://openai.com/policies/privacy-policy"
-              // opens the link in a new tab
+              href="https://groq.com/privacy-policy/"
               target="_blank"
-              // a best practice for security when using target="_blank".
               rel="noopener noreferrer"
             >
-              OpenAI Privacy Policy
+              Groq Privacy Policy
+            </a>,&#160;
+            <a
+              href="https://mistral.ai/privacy-policy/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Mistral AI Privacy Policy
+            </a>, and&#160;
+            <a
+              href="https://policies.google.com/privacy"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Google Privacy Policy
             </a>
           </li>
           <li className={styles.item}>

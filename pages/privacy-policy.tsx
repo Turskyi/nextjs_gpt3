@@ -82,8 +82,8 @@ export default function PrivacyPolicy() {
           As we do not collect personal information, the rights regarding
           access, update, deletion, or objection to the processing of personal
           data do not apply. However, if you have concerns regarding how your
-          data is processed by the AI model (e.g., GPT-3.5), we encourage you to
-          reach out directly to the model provider, such as Microsoft.
+          data is processed by the AI models, we encourage you to
+          reach out directly to the model providers.
         </p>
 
         <h2>Security</h2>

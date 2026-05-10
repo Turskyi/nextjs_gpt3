@@ -17,7 +17,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <title key="title">Politer AI: Make your messages nicer</title>
         <meta
           name="description"
-          content="Politer AI is a GPT-3 powered tool created by Software Engineer Dmytro Turskyi, that helps you write more polite and friendly messages. Just type your message and click the button to see the magic."
+          content="Politer AI is a tool created by Software Engineer Dmytro Turskyi, that helps you write more polite and friendly messages. Just type your message and click the button to see the magic."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
