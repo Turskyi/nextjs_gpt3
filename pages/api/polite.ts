@@ -27,7 +27,7 @@ export default async function handler(
   /**
    * AI PROVIDER SELECTION
    *
-   * Current Primary: Groq (Llama 3.3 70B)
+   * Current Primary: Groq
    * Primary Fallback: Mistral (Mistral Small)
    * Secondary Fallback: Gemini (Gemini 3.5 Flash Lite)
    */

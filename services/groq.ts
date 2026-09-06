@@ -5,6 +5,8 @@ const groq = new Groq({
   apiKey: process.env.GROQ_API_KEY,
 });
 
+const GROQ_MODEL = process.env.GROQ_MODEL || 'qwen/qwen3.8-27b';
+
 export async function generateWithGroq(input: string): Promise<string> {
   const completion = await groq.chat.completions.create({
     messages: [
@@ -13,7 +15,7 @@ export async function generateWithGroq(input: string): Promise<string> {
         content: PROMPT_TEMPLATE(input),
       },
     ],
-    model: 'llama-3.3-70b-versatile',
+    model: GROQ_MODEL,
   });
 
   return completion.choices[0]?.message?.content || '';
