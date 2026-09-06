@@ -1,8 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { INPUT_MAX_LENGTH } from '../../constants';
-import { generateWithGroq } from '../../services/groq';
-import { generateWithMistral } from '../../services/mistral';
-import { generateWithGemini } from '../../services/gemini';
+import { generateWithGroq, GROQ_MODEL } from '../../services/groq';
+import { generateWithMistral, MISTRAL_MODEL } from '../../services/mistral';
+import { generateWithGemini, GEMINI_MODEL } from '../../services/gemini';
 
 export default async function handler(
   request: NextApiRequest,
@@ -23,6 +23,8 @@ export default async function handler(
   }
 
   let politerMessage: string | undefined;
+  let provider: string | undefined;
+  let model: string | undefined;
 
   /**
    * AI PROVIDER SELECTION
@@ -35,6 +37,8 @@ export default async function handler(
   // 1. Try Groq (Primary - Most reliable free tier)
   try {
     politerMessage = await generateWithGroq(input);
+    provider = 'groq';
+    model = GROQ_MODEL;
   } catch (error) {
     console.error('Groq API error:', error);
   }
@@ -43,6 +47,8 @@ export default async function handler(
   if (!politerMessage) {
     try {
       politerMessage = await generateWithMistral(input);
+      provider = 'mistral';
+      model = MISTRAL_MODEL;
     } catch (error) {
       console.error('Mistral API error:', error);
     }
@@ -52,6 +58,8 @@ export default async function handler(
   if (!politerMessage) {
     try {
       politerMessage = await generateWithGemini(input);
+      provider = 'gemini';
+      model = GEMINI_MODEL;
     } catch (error) {
       console.error('Gemini API error:', error);
       return response
@@ -63,5 +71,9 @@ export default async function handler(
   return response
     .setHeader('Content-Type', 'application/json')
     .status(200)
-    .json({ politerMessage: politerMessage?.trim() || '' });
+    .json({
+      politerMessage: politerMessage?.trim() || '',
+      provider,
+      model,
+    });
 }

@@ -82,7 +82,7 @@ element horizontally within its container. */
 .politeMessage {
   /* Softer background color */
   background-color: #e3f2fd;
-  padding: 10px;
+  padding: 12px;
   border-radius: 8px;
   font-weight: bold;
 }
@@ -91,6 +91,15 @@ element horizontally within its container. */
   /* Darker, more readable green */
   color: #388e3c;
   font-style: italic;
+  margin-bottom: 0;
+}
+
+.politeFooter {
+  font-size: 0.7rem;
+  color: #6c757d;
+  text-align: right;
+  margin-top: 8px;
+  font-weight: normal;
 }
 
 .politeContainer {

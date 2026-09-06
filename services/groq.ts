@@ -5,7 +5,7 @@ const groq = new Groq({
   apiKey: process.env.GROQ_API_KEY,
 });
 
-const GROQ_MODEL = process.env.GROQ_MODEL || 'qwen/qwen3.8-27b';
+export const GROQ_MODEL = process.env.GROQ_MODEL || 'qwen/qwen3.8-27b';
 
 export async function generateWithGroq(input: string): Promise<string> {
   const completion = await groq.chat.completions.create({

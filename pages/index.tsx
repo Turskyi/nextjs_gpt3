@@ -19,12 +19,22 @@ export default function Home() {
   ];
 
   const [message, setMessage] = useState('');
+  const [provider, setProvider] = useState<string | undefined>();
+  const [model, setModel] = useState<string | undefined>();
   const [messageLoading, setMessageLoading] = useState(false);
   const [messageLoadingError, setMessageLoadingError] = useState(false);
   const [charCount, setCharCount] = useState(0);
 
+  const providerLabels: Record<string, string> = {
+    groq: 'Groq',
+    mistral: 'Mistral',
+    gemini: 'Gemini',
+  };
+
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     setMessage('');
+    setProvider(undefined);
+    setModel(undefined);
     event.preventDefault();
     const formData = new FormData(event.target as HTMLFormElement);
     const prompt = formData.get('prompt')?.toString().trim();
@@ -44,6 +54,8 @@ export default function Home() {
           }
           const body = await response.json();
           setMessage(body.politerMessage || '');
+          setProvider(body.provider);
+          setModel(body.model);
         }
       } catch (error) {
         console.error(error);
@@ -122,6 +134,11 @@ export default function Home() {
             <h5 className={styles.politeTitle}>Polite version:</h5>
             <div className={styles.politeMessage}>
               <h5>{message}</h5>
+              {provider && (
+                <div className={styles.politeFooter} title={model}>
+                  Generated using {providerLabels[provider] || provider}
+                </div>
+              )}
             </div>
           </div>
         )}
