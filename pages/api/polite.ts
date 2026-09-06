@@ -29,7 +29,7 @@ export default async function handler(
    *
    * Current Primary: Groq (Llama 3.3 70B)
    * Primary Fallback: Mistral (Mistral Small)
-   * Secondary Fallback: Gemini (Gemini 2.0 Flash Lite)
+   * Secondary Fallback: Gemini (Gemini 3.5 Flash Lite)
    */
 
   // 1. Try Groq (Primary - Most reliable free tier)
