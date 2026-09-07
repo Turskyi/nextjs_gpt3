@@ -28,9 +28,9 @@ fallbacks.
 ```
 Browser (pages/index.tsx)
   → GET /api/polite?prompt=<text>   (pages/api/polite.ts)
-    → Primary: Groq (llama-3.3-70b-versatile)
+    → Primary: Groq (qwen/qwen3.8-27b)
     → Fallback 1: Mistral AI (mistral-small-latest)
-    → Fallback 2: Google Generative AI (gemini-2.0-flash-lite)
+    → Fallback 2: Google Generative AI (gemini-3.5-flash-lite)
     ← { politerMessage: string }
   ← renders polite message in UI
 ```
