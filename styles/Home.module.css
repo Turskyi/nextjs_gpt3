@@ -159,10 +159,9 @@ element horizontally within its container. */
 .screenshots img {
   scroll-snap-align: start;
   flex-shrink: 0;
-  /* Ensures images shrink if necessary */
-  max-width: 90%;
-  /* Maintains aspect ratio */
-  height: auto;
+  width: auto;
+  height: 600px;
+  max-width: none;
 }
 
 .screenshots img:first-child {
